@@ -1,9 +1,13 @@
 # CrustyDB
 
 This is the repository for the Academic Handout version of the CrustyDB project.
-Please see your handout instructions for more information.
+Please see the [handout instructions](docs/) for more information.
 
-## CrustyDB 1 - Page Milestone
+## Lab 0 - Learning Rust
+
+Implement a small project to master the fundamental skills of Rust in this file `src/minigrep/main.rs`. You may also need to add a file `src/minigrep/lib.rs`. The instructions for learning Rust and finishing this project are [here](src/minigrep/README.md)
+
+## Lab 1 - Page Milestone
 
 Implement the slotted page structure in the files `src/storage/heapstore/src/page.rs` 
 and `src/storage/heapstore/src/heap_page.rs`. 
@@ -11,7 +15,7 @@ Please see your handout instructions for more information.
 
 Do not modify any other files in the repository.
 
-## CrustyDB 2 - HeapStore Milestone
+## Lab 2 - HeapStore Milestone
 Complete the implementation of the Heapstore in the `src/storage/heapstore/src`
 crate. The files that you need to modify are:
 
@@ -25,7 +29,7 @@ the following files:
 
 Please see your handout instructions for more information.
 
-## CrustyDB 3 - Query Operator Milestone
+## Lab 3 - Query Operator Milestone
 Complete the implementation of the query operators in the `src/queryexe/src/opiterator`
 crate. The files that you need to modify are:
 

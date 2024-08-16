@@ -12,6 +12,7 @@ members = [
     "src/optimizer",
     "src/queryexe",
     "src/utilities",
+    "src/minigrep",
 ]
 exclude = [
     "e2e-benchmarks",

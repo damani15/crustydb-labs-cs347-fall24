@@ -23,10 +23,6 @@ crate. The files that you need to modify are:
 - `src/storage/heapstore/src/heapfileiter.rs`
 - `src/storage/heapstore/src/storage_manager.rs`
 
-If you are also implementing a Buffer Pool, you will additionally need to modify
-the following files:
-- 
-
 Please see your handout instructions for more information.
 
 ## Lab 3 - Query Operator Milestone
@@ -36,7 +32,6 @@ crate. The files that you need to modify are:
 - `src/queryexe/src/opiterator/nested_loop_join.rs`
 - `src/queryexe/src/opiterator/hash_join.rs`
 - `src/queryexe/src/opiterator/aggregate.rs`
-
 
 Please see your handout instructions for more information.
 

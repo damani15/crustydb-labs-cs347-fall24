@@ -1,6 +1,6 @@
 ## Learning Rust
 
-The e-book [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html) is a great source for learning Rust. To get the necessary Rust programming skills for the course labs, students are expected to go through Chapters 1-11, Chapter 13, and Chapter 15.1. Chapters 17 and 18 will help you write cleaner code if you like to read.
+The e-book [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html) is a great resource for learning Rust. To get the necessary Rust programming skills for the course labs, students are expected to go through Chapters 1-11, Chapter 13, and Chapter 15.1. Chapters 17 and 18 will help you write cleaner code if you like to read.
 
 The suggested IDE is [VS Code](https://code.visualstudio.com/) with the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension installed.
 

@@ -5,7 +5,7 @@ Please see the [handout instructions](docs/) for more information.
 
 ## Lab 0 - Learning Rust
 
-Implement a small project to master the fundamental skills of Rust in this file `src/minigrep/src/main.rs`. You may also need to add a file `src/minigrep/src/lib.rs` yourself. The instructions for learning Rust and finishing this project are [here](src/minigrep/README.md)
+Implement a small project to master the fundamental skills of Rust in this file `src/minigrep/src/main.rs`. You may also need to add a file `src/minigrep/src/lib.rs` yourself. The instructions for learning Rust and finishing this project are [here](src/minigrep/README.md). 
 
 ## Lab 1 - Page Milestone
 

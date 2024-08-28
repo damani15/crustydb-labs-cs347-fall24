@@ -52,7 +52,7 @@ are relevant to the follow-up labs onwards.
 
 
 ## Heapstore Design
-![pg_hs.png](pg_hs.png)
+![pg_hs.png](figures/pg_hs.png)
 The heapstore is a storage manager that manages data stored in heap files. Any
 value that is to be stored in the database is first converted to a byte array
 and then passed into the heapstore to be stored. You'll learn much more about 

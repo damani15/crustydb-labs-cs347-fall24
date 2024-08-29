@@ -510,7 +510,7 @@ the provided tests. To run the provided tests use `cargo test -p heapstore
 hs_page` and ensure all the tests pass. 
 
 ### Write Up
-20% is based on your write up (`docs/lab-1.txt`). The write up should contain:
+20% is based on your write up [lab1-writeup.txt](docs/lab1-writeup.txt). The write up should contain:
  -  A brief description of your solution, in particular what design decisions
     you made and why. This is only needed for the parts of your solution that
     involved some significant work (e.g. just returning a counter or a pass

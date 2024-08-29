@@ -2,7 +2,7 @@
 
 The e-book [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html) is a great resource for learning Rust. To get the necessary Rust programming skills for the course labs, students are expected to go through Chapters 1-11, Chapter 13, and Chapter 15.1. Chapters 17 and 18 will help you write cleaner code if you like to read.
 
-The suggested IDE is [VS Code](https://code.visualstudio.com/) with the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension installed. Setting breakpoints will help you debug your code more efficiently. You can find the instructions in this video[https://www.youtube.com/watch?v=TlfGs7ExC0A].
+The suggested IDE is [VS Code](https://code.visualstudio.com/) with the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension installed. Setting breakpoints will help you debug your code more efficiently. You can find the instructions in this [video](https://www.youtube.com/watch?v=TlfGs7ExC0A).
 
 ## Minigrep
 

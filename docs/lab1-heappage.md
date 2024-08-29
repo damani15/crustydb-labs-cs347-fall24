@@ -509,25 +509,11 @@ Majority of the points will come from
 the provided tests. To run the provided tests use `cargo test -p heapstore
 hs_page` and ensure all the tests pass. 
 
-### Quality
-15% of your score is based on code quality (following good coding conventions,
-comments, well-organized functions, etc). 
-
-We will run `cargo fmt --check` and `cargo clippy` 
-on your code; if either fails
-or reports issues on your code (only the files you edit/turn in), 
-you will receive 0% on code quality.
-
-You can easily run `cargo fmt` to format your code in the right "style" and 
-clippy gives you warnings about your code, 
-for either performance reasons or code quality.
-
 ### Write Up
-5% is based on your write up (`docs/lab-1.txt`). The write up should contain:
+20% is based on your write up (`docs/lab-1.txt`). The write up should contain:
  -  A brief description of your solution, in particular what design decisions
     you made and why. This is only needed for the parts of your solution that
     involved some significant work (e.g. just returning a counter or a pass
     through function isn't a design decision).
-- How long you roughly spent on the lab, and what you liked/disliked on
-  the lab.
+- How long you roughly spent on the lab, and what you liked/disliked on the lab.
 - If you know some part of the lab is incomplete, write up what parts are not working, how close you think you are, and what part(s) you got stuck on.

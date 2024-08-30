@@ -10,7 +10,7 @@ The Minigrep project is intended for students to practice fundamental Rust progr
 
 ## Testing Minigrep
 
-We will use the following two commands to test the correctness of your minigrep project
+We will use the following two commands, which will be run under `minigrep/` folder, to test the correctness of your minigrep project. For students who use Windows, the instructions for setting the environment variable can be found [here](https://doc.rust-lang.org/book/ch12-05-working-with-environment-variables.html) (search `Powershell` in the doc to find the relevant instructions).
 
 ```
 cargo run -- to ./src/poem.txt

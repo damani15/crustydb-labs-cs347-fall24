@@ -6,7 +6,7 @@ The suggested IDE is [VS Code](https://code.visualstudio.com/) with the [rust-an
 
 ## Minigrep
 
-The Minigrep project is intended for students to practice fundamental Rust programming skills. It is taken from [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html). To finish this project, students need to follow the instructions in [Chapter 12](https://doc.rust-lang.org/book/ch12-00-an-io-project.html/) and [Chapter 13.3](https://doc.rust-lang.org/book/ch13-03-improving-our-io-project.html). 
+The Minigrep project is intended for students to practice fundamental Rust programming skills. It is taken from [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html). To finish this project, students need to follow the instructions in [Chapter 12](https://doc.rust-lang.org/book/ch12-00-an-io-project.html) and [Chapter 13.3](https://doc.rust-lang.org/book/ch13-03-improving-our-io-project.html). 
 
 ## Testing Minigrep
 

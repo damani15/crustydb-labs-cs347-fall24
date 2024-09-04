@@ -52,7 +52,7 @@ are relevant to the follow-up labs onwards.
 
 
 ## Heapstore Design
-![pg_hs.png](figures/pg_hs.png)
+![pg_hs.png](pg_hs.png)
 The heapstore is a storage manager that manages data stored in heap files. Any
 value that is to be stored in the database is first converted to a byte array
 and then passed into the heapstore to be stored. You'll learn much more about 
@@ -507,10 +507,20 @@ the page. We also will have additional tests that will not be provided but
 evaluate requirements from this document. 
 Majority of the points will come from
 the provided tests. To run the provided tests use `cargo test -p heapstore
-hs_page` and ensure all the tests pass. 
+hs_page` and ensure all the tests pass.
+
+### Quality
+10% of your score is based on code quality (following good coding conventions, comments, well-organized functions, etc). We will be looking for the following:
+
+1. **Comments**: You should have comments for all new helper functions, constants and other identifiers that you add.
+2. **Proper Types**: You should use suitable custom types. For example, you should use `SlotId` instead of `u16` when referring to a slot number. 
+3. **Magic Numbers**: You should avoid magic numbers in your code. If you have a constant that is used in multiple places, you should define it as a constant at the top of the file.
+
+You could use `cargo fmt` to format your code in the right "style" and use 
+`cargo clippy` to identify issues about your code, for either performance reasons or code quality. 
 
 ### Write Up
-20% is based on your write up [lab1-writeup.txt](lab1-writeup.txt). The write up should contain:
+10% is based on your write up (`docs/lab1-writeup.txt`). The write up should contain:
  -  A brief description of your solution, in particular what design decisions
     you made and why. This is only needed for the parts of your solution that
     involved some significant work (e.g. just returning a counter or a pass

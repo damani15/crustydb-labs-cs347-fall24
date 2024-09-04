@@ -202,7 +202,7 @@ pub fn gen_random_test_sm_dir() -> PathBuf {
     let mut check_file = dir.clone();
     check_file.set_file_name(String::from(".CRUSTYROOT"));
     let mut found_root = Path::new(&check_file).exists();
-    while !found_root {
+    while found_root {
         dir.push(String::from(".."));
         check_file = dir.clone();
         check_file.set_file_name(String::from(".CRUSTYROOT"));

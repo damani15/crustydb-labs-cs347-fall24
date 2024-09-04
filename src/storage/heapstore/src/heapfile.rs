@@ -1,4 +1,3 @@
-use crate::heap_page::HeapPage;
 use crate::page::Page;
 use common::prelude::*;
 use common::PAGE_SIZE;
@@ -8,7 +7,7 @@ use std::path::PathBuf;
 use std::sync::atomic::{AtomicU16, Ordering};
 use std::sync::{Arc, RwLock};
 
-use std::io::BufWriter;
+//use std::io::BufWriter;
 use std::io::{Seek, SeekFrom};
 
 /// The struct for a heap file.  
@@ -23,9 +22,7 @@ use std::io::{Seek, SeekFrom};
 /// Your code should persist what information is needed to recreate the heapfile.
 ///
 pub(crate) struct HeapFile {
-    // TODO milestone hs
-    // Add any fields you need to maintain state for a HeapFile
-
+    pub file: Arc<RwLock<File>>,
     // Track this HeapFile's container Id
     pub container_id: ContainerId,
     // The following are for profiling/ correctness checks
@@ -53,17 +50,7 @@ impl HeapFile {
                 )))
             }
         };
-
-        // TODO milestone hs
-        // Initialize the HeapFile
-
-        Ok(HeapFile {
-            //TODO milestone hs
-            // Add your fields here
-            container_id,
-            read_count: AtomicU16::new(0),
-            write_count: AtomicU16::new(0),
-        })
+        panic!("TODO milestone hs");
     }
 
     /// Return the number of pages for this HeapFile.
@@ -105,6 +92,8 @@ impl HeapFile {
 #[cfg(test)]
 #[allow(unused_must_use)]
 mod test {
+    use crate::page::HeapPage;
+
     use super::*;
     use common::testutil::*;
     use temp_testdir::TempDir;

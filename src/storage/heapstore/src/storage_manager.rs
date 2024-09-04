@@ -14,6 +14,11 @@ use std::{fs, num};
 
 pub const STORAGE_DIR: &str = "heapstore";
 
+// The data types we need for tracking the mapping between containerId and HeapFile/PathBuf
+pub(crate) type ContainerMap = Arc<RwLock<HashMap<ContainerId, Arc<HeapFile>>>>;
+pub(crate) type ContainerPathMap = Arc<RwLock<HashMap<ContainerId, Arc<PathBuf>>>>;
+const PERSIST_CONFIG_FILENAME: &str = "storage_manager";
+
 /// The StorageManager struct
 #[derive(Serialize, Deserialize)]
 pub struct StorageManager {
@@ -21,6 +26,9 @@ pub struct StorageManager {
     pub storage_dir: PathBuf,
     /// Indicates if this is a temp StorageManager (for testing)
     is_temp: bool,
+    pub(crate) cid_path_map: ContainerPathMap,
+    #[serde(skip)]
+    pub(crate) cid_heapfile_map: ContainerMap,
 }
 
 /// The required functions in HeapStore's StorageManager that are specific for HeapFiles
@@ -81,11 +89,43 @@ impl StorageTrait for StorageManager {
     type ValIterator = HeapFileIterator;
 
     /// Create a new storage manager that will use storage_dir as the location to persist data
-    /// (if the storage manager persists records on disk; not the case for memstore)
+    /// (if the storage manager persists records on disk)
     /// For startup/shutdown: check the storage_dir for data persisted in shutdown() that you can
     /// use to populate this instance of the SM. Otherwise create a new one.
     fn new(storage_dir: &Path) -> Self {
-        panic!("TODO milestone hs");
+        let sm_file = storage_dir;
+        let sm_file = sm_file.join(PERSIST_CONFIG_FILENAME);
+        if sm_file.exists() {
+            debug!("Loading storage manager from config file {:?}", sm_file);
+            let reader = fs::File::open(sm_file).expect("error opening persist config file");
+            let sm: StorageManager =
+                serde_json::from_reader(reader).expect("error reading from json");
+            
+            let mut hm: HashMap<ContainerId, Arc<HeapFile>> = HashMap::new();
+            let mut hmfiles: HashMap<ContainerId, Arc<PathBuf>> = HashMap::new();
+
+            let path_map: ContainerPathMap = sm.cid_path_map.clone();
+            let old_files = path_map.read().unwrap();
+
+            for (id, path) in old_files.iter() {
+                let hf = HeapFile::new(path.to_path_buf(), *id)
+                    .expect("Error creating/opening old HF {path}");
+                hmfiles.insert(*id, Arc::new(path.to_path_buf()));
+                hm.insert(*id, Arc::new(hf));
+            }
+
+            let cid_heapfile_map = Arc::new(RwLock::new(hm));
+            let cid_path_map = Arc::new(RwLock::new(hmfiles));
+            StorageManager {
+                storage_dir: storage_dir.to_path_buf(),
+                cid_heapfile_map,
+                cid_path_map,
+                is_temp: false,
+            }
+        } else {
+            debug!("Making new storage_manager in directory {:?}", storage_dir);
+            panic!("TODO milestone hs");
+        }
     }
 
     /// Create a new storage manager for testing. There is no startup/shutdown logic here: it
@@ -146,7 +186,7 @@ impl StorageTrait for StorageManager {
         panic!("TODO milestone hs");
     }
 
-    /// Create a new container to be stored.
+    /// Create a new container (i.e., a HeapFile) to be stored.
     /// fn create_container(&self, name: String) -> ContainerId;
     /// Creates a new container object.
     /// For this milestone you will not need to utilize
@@ -172,7 +212,7 @@ impl StorageTrait for StorageManager {
     }
 
     /// Remove the container and all stored values in the container.
-    /// If the container is persisted remove the underlying files
+    /// If the container is persisted, remove the underlying files
     fn remove_container(&self, container_id: ContainerId) -> Result<(), CrustyError> {
         panic!("TODO milestone hs");
     }
@@ -234,7 +274,14 @@ impl StorageTrait for StorageManager {
     /// that can be used to create a HeapFile object pointing to the same data. You don't need to
     /// worry about recreating read_count or write_count.
     fn shutdown(&self) {
-        panic!("TODO milestone hs");
+        debug!("serializing storage manager");
+        let mut filename = self.storage_dir.clone();
+        filename.push(PERSIST_CONFIG_FILENAME);
+        serde_json::to_writer(
+            fs::File::create(filename).expect("error creating file"),
+            &self,
+        )
+        .expect("error serializing storage manager");
     }
 }
 
@@ -251,6 +298,7 @@ impl Drop for StorageManager {
         }
     }
 }
+
 
 #[cfg(test)]
 #[allow(unused_must_use)]
@@ -367,3 +415,5 @@ mod test {
         assert_eq!(1000, count);
     }
 }
+
+

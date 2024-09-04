@@ -7,7 +7,7 @@ Please see the [handout instructions](docs/) for more information.
 
 Implement a small project to master the fundamental skills of Rust in this file `src/minigrep/src/main.rs`. You may also need to add a file `src/minigrep/src/lib.rs` yourself. The instructions for learning Rust and finishing this project are [here](src/minigrep/README.md). 
 
-## Lab 1 - Page Milestone
+## Lab 1 - Page Lab
 
 Implement the slotted page structure in the files `src/storage/heapstore/src/page.rs` 
 and `src/storage/heapstore/src/heap_page.rs`. 
@@ -15,7 +15,13 @@ Please see your [handout instructions](docs/lab1-heappage.md) for more informati
 
 Do not modify any other files in the repository.
 
-## Lab 2 - HeapStore Milestone
+## Lab 2 - HeapStore Lab
+Important! I have updated the following files. Please make sure to use the up-to-date files in this repo:
+
+- `src/common/src/testutil.rs`
+- `src/storage/heapstore/src/heapfile.rs`
+- `src/storage/heapstore/src/storage_manager.rs`
+
 Complete the implementation of the Heapstore in the `src/storage/heapstore/src`
 crate. The files that you need to modify are:
 

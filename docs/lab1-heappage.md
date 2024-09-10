@@ -518,6 +518,7 @@ hs_page` and ensure all the tests pass.
 1. **Comments**: You should have comments for all new helper functions, constants and other identifiers that you add.
 2. **Proper Types**: You should use suitable custom types. For example, you should use `SlotId` instead of `u16` when referring to a slot number. 
 3. **Magic Numbers**: You should avoid magic numbers in your code. If you have a constant that is used in multiple places, you should define it as a constant at the top of the file.
+4. **Descriptive Names**: Ensure that variables, functions, and constants have descriptive names that convey their purpose. Please don't use single-letter names or abbreviations unless they are widely recognized and contextually appropriate.
 
 You could use `cargo fmt` to format your code in the right "style" and use 
 `cargo clippy` to identify issues about your code, for either performance reasons or code quality. 

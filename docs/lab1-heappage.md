@@ -124,7 +124,10 @@ Every stored value is associated with a `ValueId`. This is defined in
 `common::ids`. Each ValueId must specify a `ContainerId` (which is associated with
 exactly one container) and then a set of optional Id types. For this lab,
 we will use `PageId` and `SlotId` for each `ValueId`. The data types used for
-these Ids are also defined in `common::ids`.
+these Ids are also defined in `common::ids`. 
+
+To map to what we have discussed in the class, a `ValueId` is a `RecordId`, the `ContainerId` is the `FileId`, 
+which represents a file and a relation.
 
 ```
 pub type ContainerId = u16;

@@ -11,7 +11,7 @@ Implement a small project to master the fundamental skills of Rust in this file 
 
 Implement the slotted page structure in the files `src/storage/heapstore/src/page.rs` 
 and `src/storage/heapstore/src/heap_page.rs`. 
-Please see your [handout instructions](docs/lab1-heappage.md) for more information.
+Please see the [handout instructions](docs/lab1-heappage.md) for more information.
 
 Do not modify any other files in the repository.
 
